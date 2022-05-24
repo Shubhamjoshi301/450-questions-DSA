@@ -1,0 +1,1 @@
+{"name":"Local: maze_search","url":"f:\\450\\graph\\maze_search.py","tests":[{"id":1652677765481,"input":"4 \n1 0 0 0 \n1 1 0 1 \n0 1 0 0 \n0 1 1 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\450\\graph\\maze_search.py","group":"local","local":true}
