@@ -42,26 +42,76 @@ Constraints:
 # complexity n^2
 #User function Template for python3
 
+# class Solution:
+    
+#     #Function to find if there is a celebrity in the party or not.
+#     def celebrity(self, M, n):
+#         # code here 
+#         indeg = []
+#         outdeg = []
+#         for i in range(n):
+#             temp1 = 0
+#             temp2 = 0
+#             for j in range(n):
+#                 temp1 += M[j][i]
+#                 temp2 += M[i][j]
+#             indeg.append(temp1)
+#             outdeg.append(temp2)
+            
+#         for i in range(len(indeg)):
+#             if indeg[i] == n-1 and outdeg[i] == 0:
+#                 return i
+#         return -1
+
+
+# #{ 
+# #  Driver Code Starts
+# #Initial Template for Python 3
+
+# if __name__ == '__main__':
+#     t = int(input())
+#     for _ in range(t) :
+#         n = int(input())
+#         a = list(map(int,input().strip().split()))
+#         k = 0
+#         m = []
+#         for i in range(n):
+#             row = []
+#             for j in range(n):
+#                 row.append(a[k])
+#                 k+=1
+#             m.append(row)
+#         ob = Solution()
+#         print(ob.celebrity(m,n))
+# # } Driver Code Ends
+
+'''
+Two pointer complexcity : o(n)
+'''
+
+#User function Template for python3
+
 class Solution:
     
     #Function to find if there is a celebrity in the party or not.
     def celebrity(self, M, n):
         # code here 
-        indeg = []
-        outdeg = []
-        for i in range(n):
-            temp1 = 0
-            temp2 = 0
-            for j in range(n):
-                temp1 += M[j][i]
-                temp2 += M[i][j]
-            indeg.append(temp1)
-            outdeg.append(temp2)
-            
-        for i in range(len(indeg)):
-            if indeg[i] == n-1 and outdeg[i] == 0:
-                return i
-        return -1
+        i = 0
+        j = n-1
+        while i < j:
+            if M[i][j] == 1:
+                i += 1
+            else:
+                j-=1
+        
+        for k in range(n):
+            if M[i][k] == 1 and i !=k:
+                return -1
+        for k in range(n):
+            if M[k][i] == 0 and i!=k:
+                return -1
+        
+        return i
 
 
 #{ 
