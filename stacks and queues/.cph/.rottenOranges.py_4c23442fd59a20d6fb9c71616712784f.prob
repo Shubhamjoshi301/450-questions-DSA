@@ -1,0 +1,1 @@
+{"name":"Local: rottenOranges","url":"f:\\450\\stacks and queues\\rottenOranges.py","tests":[{"id":1653371848692,"input":"1\n3 3\n0 1 2 \n0 1 2 \n2 1 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\450\\stacks and queues\\rottenOranges.py","group":"local","local":true}
