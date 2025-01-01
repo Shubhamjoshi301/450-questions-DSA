@@ -1,32 +1,11 @@
-#User function Template for python3
-import math
-class Solution:
-    def getMinDiff(self, arr, n, k):
-        # code here
-        arr.sort()
-        ans = arr[-1] - arr[0]
-         
+def max_sub_array_sum(arr):
+    max_so_far, local_max = -float("inf"),0
+    for i in range(len(arr)):
+        local_max = max(arr[i],local_max+arr[i])
+        max_so_far = max(max_so_far,local_max)
         
-        for i in range(n):
-            if arr[i]-k >= 0:
-                minno = min(arr[0]+k,arr[i]-k)
-        
-            maxno = max(arr[i] + k, arr[-1]-k)
-        
-        return min(ans,maxno-minno)
-#{ 
-#  Driver Code Starts
-#Initial Template for Python 3
+    return max_so_far
 
-if __name__ == '__main__':
-    tc = int(input())
-    while tc > 0:
-        k = int(input())
-        n = int(input())
-        arr = list(map(int, input().strip().split()))
-        ob = Solution()
-        ans = ob.getMinDiff(arr, n, k)
-        print(ans)
-        tc -= 1
 
-# } Driver Code Ends
+arr = list(map(int,input().split(',')))
+print(max_sub_array_sum(arr))
